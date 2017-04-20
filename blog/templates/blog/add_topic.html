@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<form action="." method="post">{% csrf_token %}
+		<div class="card col-md-4">
+	        <div class="fieldWrapper">
+	            {{ form.category.errors }}
+				<div class="card-header"><h5>{{ 'Category:    ' }}</h5></div> {{ form.category|linebreaks }}
+			</div>
+			<div class="fieldWrapper">
+				{{ form.topic.errors }}
+				<div class="card-header"><h5>{{ 'Classification ID (e.g. LSA01):    ' }}</h5></div> {{ form.topic|linebreaks }}
+			</div>
+			<div class="fieldWrapper">
+				{{ form.value.errors }}
+				<div class="card-header"><h5>{{ 'Topic:    ' }}</h5></div> {{ form.value }}
+			</div>
+	    	<div class="btn-toolbar">
+				<input type="submit" class="btn btn-small btn-info" value="reset" name="reset">
+				<input type="submit" class="btn btn-small btn-info" value="add" name="addtopic">
+			</div>
+		</div>
+	</form>
+{% endblock %}

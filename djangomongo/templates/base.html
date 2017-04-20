@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Literature</title>
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      body {
+      	padding-bottom: 70px;
+      	background: #eee !important;
+      }
+    </style>
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://github.com/necolas/normalize.css/blob/master/normalize.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>    	
+  </head>
+  <body>
+    <div class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Literature</a>
+          <div>
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="{% url 'post-create' %}">Create Literature</a></li>
+              <li><a href="{% url 'post-search' %}">Search Literature</a></li>
+              <li><a href="{% url 'add-topics' %}">Add Topic</a></li>
+              <li><a href="{% url 'select-topics' %}">Select Topic</a></li>
+              <li><a href="{% url 'researcher' %}">Author Profile</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      {% include "messages.html" %}
+    	{% block content %}{% endblock %}
+    </div> <!-- /container -->    
+  </body>
+  <footer class="footer">
+    <div class="navbar navbar-fixed-bottom">
+        <span class="text-muted">&copy;2017. Expertise Modeling</span>
+    </div>
+  </footer>
+  
+</html>

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+	<style>	
+	.links line {
+	  stroke: #999;
+	  stroke-opacity: 0.6;
+	}
+	
+	.nodes circle {
+	  stroke: #fff;
+	  stroke-width: 1.5px;
+	}	
+
+	</style>
+	<script src="{{ STATIC_URL }}bootstrap/js/authorProfile.js"></script>
+	<script src="{{ STATIC_URL }}bootstrap/js/linkTitleAbstract.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="{{ STATIC_URL }}bootstrap/js/uploadimage.js"></script>
+	<script src="{{ STATIC_URL }}bootstrap/js/imagebutton.js"></script>
+	<script src="{{ STATIC_URL }}bootstrap/js/linkFilterTitle.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://github.com/necolas/normalize.css/blob/master/normalize.css">
+    
+    
+	<form action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="card">
+						<div class="fieldWrapper">
+					    	{{ form.file.errors }}
+					        <div class="card-header"><h6>{{ 'File:    ' }}</h6></div> {{ form.file }}
+					    </div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="card">
+					    <div class="fieldWrapper">
+					        {{ form.author.errors }}
+					        <div class="card-header"><h6>{{ 'Author:    ' }}</h6></div> {{ form.author }}
+					    </div>	
+					</div>
+				</div>	
+				<div class="col-md-2">	
+					<div class = "btn-toolbar">        
+					    <input type="submit" class="btn btn-sm btn-info" value="load" name="load">
+						<input type="submit" class="btn btn-sm btn-info" value="save" name="save">	
+					</div>			
+				</div>	
+			</div>	
+			<br>
+			<div class="row">				
+				<div class="col-md-3">
+					<div class="card">
+						<div id="mytags" class="fieldWrapper">
+				            {{ form.tags.errors }}
+				            <div class="card-header"><h6>{{ 'Tags:    ' }}</h6></div> {{ form.tags }}
+				        </div>
+				    </div>
+				</div>
+				<div class="col-md-6">
+					<div class="card">
+						<svg id=chart width="500" height="500"></svg>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card">
+						<div class="fieldWrapper">
+				            {{ form.abstract.errors }}
+				            <div class="card-header"><h6>{{ 'Abstract:    ' }}</h6></div> {{ form.abstract|linebreaks }}
+				        </div>
+				    </div>
+				    <div class="card">
+				        <div class="fieldWrapper">
+				            {{ form.tp.errors }}
+				            <div class="card-header"><h6>{{ 'Topic:    ' }}</h6></div> {{ form.tp|linebreaks }}
+				        </div>
+				    </div>
+			    </div>	
+			</div> 	
+		</div>
+	</form>
+{% endblock %}

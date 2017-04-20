@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}	
+	<script src="{{ STATIC_URL }}bootstrap/js/linkdropdownlist.js"></script>
+	<form action="." method="post">{% csrf_token %}
+		<div class="container">
+			<div class="card">
+				<div class="row">
+					<div class="col-md-4">
+			        	<div class="fieldWrapper">
+				            {{ form.title.errors }}
+							<div class="card-header"><h6>{{ 'Title:    ' }}</h6></div> {{ form.title|linebreaks }}
+						</div>
+						<div class="fieldWrapper">
+							{{ form.text.errors }}
+							<div class="card-header"><h6>{{ 'Abstract:    ' }}</h6></div> {{ form.text }}
+						</div>
+						<div>
+							<br><input type="submit" class="btn btn-small btn-info" value="submit" name="submit">
+						</div>					
+					</div>
+					<div class="col-md-4">
+						<div class="fieldWrapper">
+				            {{ form.is_published.errors }}
+							<div class="card-header"><h6>{{ 'Publish:    ' }}</h6></div> {{ form.is_published|linebreaks }}
+						</div>
+						<div class="fieldWrapper">
+							{{ form.tags.errors }}
+							<div class="card-header"><h6>{{ 'Tags:    ' }}</h6></div> {{ form.tags|linebreaks }}
+						</div>
+						<div class="fieldWrapper">
+				            {{ form.dropdown.errors }}
+							<div class="card-header"><h6>{{ 'Category:    ' }}</h6></div> {{ form.dropdown|linebreaks }}
+						</div>
+						<div class="fieldWrapper">
+							{{ form.mytopics.errors }}
+							<div class="card-header"><h6>{{ 'Topic:    ' }}</h6></div> {{ form.mytopics|linebreaks }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+{% endblock %}

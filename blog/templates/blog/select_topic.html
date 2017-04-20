@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<script src="{{ STATIC_URL }}bootstrap/js/linkMultiplechoicefields.js"></script>
+	<form action="." method="post">{% csrf_token %}
+		<div class="card col-md-3">
+	        <div class="fieldWrapper">
+	            {{ form.categories.errors }}
+				<div class="card-header"><h5>{{ 'Category:    ' }}</h5></div> {{ form.categories|linebreaks }}
+			</div>
+			<div class="fieldWrapper">
+				{{ form.topics.errors }}
+				<div class="card-header"><h5>{{ 'Topic:    ' }}</h5></div> {{ form.topics|linebreaks }}
+			</div>
+			<div>
+				<input type="submit" class="btn btn-small btn-info" value="select" name="select">
+			</div>
+		</div>
+	</form>
+{% endblock %}
