@@ -1,7 +1,6 @@
 
 
 
-
 var $p = jQuery.noConflict();
 $p(document).ready(function(){
 	$p('#id_abstract').empty()

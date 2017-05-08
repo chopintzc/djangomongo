@@ -1,6 +1,11 @@
-
+/*
+ * link choice box with the svg image on the Author Profile page
+ * Add all the events to the svg image (draw, redraw, click node, zoom, pan)
+ */
 
 var $a = jQuery.noConflict();
+
+// draw the svg image when the page is loaded
 $a(document).ready(function(){
 	author_id = $a('#id_author').val();
 	request_url = 'get_image/' + author_id + '/' + 'none' + '/';
@@ -10,6 +15,7 @@ $a(document).ready(function(){
 	var height = $("#chart").height();
 	var width = $("#chart").width();	
 	
+	// zoom property
 	var zoom = d3.zoom().scaleExtent([0.1, 10]).on("zoom", zoomed);
 	
 	function zoomed() {
@@ -17,6 +23,7 @@ $a(document).ready(function(){
 	    vis.attr("transform", d3.event.transform);
 	}
 	
+	// append the svg
 	var vis = d3.select("#chart").append("svg:svg")
 		.attr("width", width)
 		.attr("height", height)
@@ -25,7 +32,7 @@ $a(document).ready(function(){
 			.call(zoom)
 		.append('svg:g');
 		
-	
+	// append the rectangle to catch the mouse zoom action
 	vis.append("svg:rect")
 	  .attr("width", width)
 	  .attr("height", height)
@@ -38,9 +45,11 @@ $a(document).ready(function(){
     	.force("charge", d3.forceManyBody())
     	.force("center", d3.forceCenter(width / 2, height / 2));
 	
+	// request data from the server
 	d3.json(request_url, function(error, graph) {
 		if (error) throw error;
-
+		
+		// add link
 		var link = vis.append("g")
 	      	.attr("class", "links")
 	      	.selectAll("line")
@@ -53,7 +62,8 @@ $a(document).ready(function(){
 	        .attr("x2", function(d) { return d.target.x; })
 	        .attr("y2", function(d) { return d.target.y; })
 	      	.attr("stroke-width", function(d) { return Math.sqrt(d.value); });
-
+		
+		// add node
 		var node = vis.append("g")
 	    	.attr("class", "nodes")
 	    	.selectAll("circle")
@@ -73,6 +83,7 @@ $a(document).ready(function(){
 		node.append("title")
 	        .text(function(d) { return d.id; });
 		
+		// add click event
 		node.on("click", togglenode);
 		
 		simulation
@@ -95,10 +106,12 @@ $a(document).ready(function(){
 		}
 	});
 	
+	// redraw the image when check box is upadeted
 	$a("#mytags").change(function() {
 		author_id = $a('#id_author').val();
 		urls = '';
-			
+		
+		// loop through all the check boxes to see which of them are checked
 		tops = document.getElementById("mytags").getElementsByTagName('ul')[0].getElementsByTagName('li');
 		for (var i=tops.length-1, len=tops.length; i>=0; i--) {
 			t = tops[i].getElementsByTagName('label')[0]
@@ -120,6 +133,7 @@ $a(document).ready(function(){
 		var height = $("#chart").height();
 		var width = $("#chart").width();
 		
+		// add zoom property
 		var zoom = d3.zoom().scaleExtent([0.1, 10]).on("zoom", zoomed);
 		
 		function zoomed() {
@@ -127,6 +141,7 @@ $a(document).ready(function(){
 		    vis.attr("transform", d3.event.transform);
 		}
 		
+		// add the svg
 		var vis = d3.select("#chart").append("svg:svg")
 			.attr("width", width)
 			.attr("height", height)
@@ -135,7 +150,7 @@ $a(document).ready(function(){
 				.call(zoom)
 			.append('svg:g');
 			
-		
+		// add the rectangle
 		vis.append("svg:rect")
 		  .attr("width", width)
 		  .attr("height", height)
@@ -150,6 +165,7 @@ $a(document).ready(function(){
 	    	.force("charge", d3.forceManyBody())
 	    	.force("center", d3.forceCenter(width / 2, height / 2));
 		
+		// request data from the server
 		d3.json(request_url, function(error, graph) {
 			if (error) throw error;
 
@@ -175,6 +191,7 @@ $a(document).ready(function(){
 			node.append("title")
 		        .text(function(d) { return d.id; });
 			
+			// add click event
 			node.on("click", togglenode);
 			
 			simulation
@@ -215,6 +232,7 @@ $a(document).ready(function(){
 		  d.fy = null;
 		}
 		
+		// request abstract and topics information from server when the node is clicked
 		function togglenode(d) {
 			console.log('clicked node : '+d.id);
 			
@@ -264,7 +282,7 @@ $a(document).ready(function(){
 	  d.fy = null;
 	}
 
-	
+	// request abstract and topics information from server when the node is clicked
 	function togglenode(d) {
 		console.log('clicked node : '+d.id);
 		

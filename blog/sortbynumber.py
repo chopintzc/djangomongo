@@ -9,6 +9,9 @@ from bson import ObjectId
 from models import *
 from .myChoices import *
 
+'''
+    sort all the posts by the popularity of topics
+'''
 def sort_post():
     dict = {}
     posts = Post.objects.all()

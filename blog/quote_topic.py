@@ -122,6 +122,12 @@ class QuoteTopic(object):
         xpred_lsb = loadmodel.clf_lsb.predict(xtest)
         probs_lsb = loadmodel.clf_lsb._predict_proba_lr(xtest)
         
+        
+        '''
+            get all the topics whose probabilities are above threshold
+            retrieved topics should be ranked in probability
+            the prediction happens just in the most probable category, ignoring other categories
+        '''
         if xpred_category == 'CS':
             '''
                 predict topics for computer science

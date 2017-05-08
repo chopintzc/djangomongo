@@ -1,6 +1,5 @@
 
 
-
 var $t = jQuery.noConflict();
 $t(document).ready(function(){
 	$t('#id_tps').empty()

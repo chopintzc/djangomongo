@@ -1,4 +1,7 @@
 
+/*
+ * link dropdown menus of category and topic on the Create page
+ */
 
 var $j = jQuery.noConflict();
 $j(document).ready(function(){

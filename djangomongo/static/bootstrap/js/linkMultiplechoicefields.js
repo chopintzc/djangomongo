@@ -1,5 +1,7 @@
 
-
+/*
+ * link dropdown menus of category and topic on the Select Topic page
+ */
 
 var $m = jQuery.noConflict();
 $m(document).ready(function(){

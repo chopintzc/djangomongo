@@ -1,0 +1,15 @@
+
+{
+    "python"                : "2.7.11",
+    "Django"                : "1.5.11",
+    "django-mongodb-engine" : "0.6.0",
+    "mongo"                 : "0.1",
+    "mangoengine"           : "0.7.8",
+    "nltk"                  : "3.2.1",
+    "pdfminer"              : "20140328",
+    "pymongo"               : "2.8",
+    "scikit-learn"          : "0.18",
+    "scipy"                 : "0.18.1",
+    "simplejson"            : "3.10.0",
+    "yolk"                  : "0.4.3"
+}   

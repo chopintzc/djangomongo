@@ -24,6 +24,7 @@ class Tag(Document):
 	model for category
 '''
 class Dropdown(Document):
+	# category name
 	title = StringField(max_length=200, required=True)
     
 	def __unicode__(self):
@@ -34,7 +35,10 @@ class Dropdown(Document):
 	model for topic
 '''       
 class MyTopics(Document):
+	# topic name
 	title = StringField(max_length=200, required=True)
+	
+	# topic NSERC ID number
 	value = StringField(max_length=200, required=True)
 	
 	def __unicode__(self):
@@ -64,8 +68,13 @@ class File(Document):
 	model for researcher profile
 '''    
 class Profile(Document):
+	# researcher name
 	author = StringField(max_length=200, required=True, unique=True)
+	
+	# research topics
 	tags = ListField(StringField(max_length=200, required=False))
+	
+	# ids for all the articles saved in the MongoDB database
 	ids = ListField(ObjectIdField(required=False))
 	
 	def __unicode__(self):
@@ -75,13 +84,28 @@ class Profile(Document):
 	model for each research article
 '''	
 class Post(Document):
+	# it's not used any more
 	user = ReferenceField(User, reverse_delete_rule=CASCADE)
+	
+	# article title
 	title = StringField(max_length=200, required=True, unique=True)
+	
+	# article abstract/content
 	text = StringField(required=True)
+	
+	# it's not used any more
 	text_length = IntField()
+	
+	# it's not used any more
 	date_modified = DateTimeField(default=datetime.now)
+	
+	# it's not used any more
 	is_published = BooleanField()
+	
+	# research topics
 	tags = ListField(StringField(max_length=200, required=False))
+	
+	# it's not used any more
 	maxnumber = IntField()
     
 	def __unicode__(self):

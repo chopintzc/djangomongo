@@ -1,4 +1,8 @@
 
+/*
+ * click event of reset button on the Create page
+ */
+
 var $k = jQuery.noConflict();
 $k(document).ready(function(){
 	$k("#id_reset").click(function() {
