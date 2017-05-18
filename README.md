@@ -1,6 +1,6 @@
 # **Djangomongo**
 
-## **Abstract of the research:**
+## **Abstract of the project:**
 
 Expertise modeling is about profiling an expert based on contents from research articles. 
 In our lab, previous research was conducted to address the problem of assigning research 
