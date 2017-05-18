@@ -17,14 +17,14 @@ feedback to the system automatically assigned topics for each individual article
 ### folder information ###
 
 * djangomongo
-	> static/bootstrap/js: uploadimage.js, resettopics.js, linkMultiplechoicefield.js, and linkdropdownlost.js
+	- static/bootstrap/js: uploadimage.js, resettopics.js, linkMultiplechoicefield.js, and linkdropdownlost.js
 						   (front end ajax methods to handle web page events)
-	> templates: base.html and messages.html 
+	- templates: base.html and messages.html 
 				 (base html)
 * blog
-	> static/bootstrap/js: all the files
+	- static/bootstrap/js: all the files
 						   (back end server logics, critical parts consist of models.py, views.py, urls.py, and so on)
-	> templates/blog: add_topic.html post_create.html, post_detail.html, post_list.html, post_search.html,
+	- templates/blog: add_topic.html post_create.html, post_detail.html, post_list.html, post_search.html,
 					  post_update.html, researcher-profile.html, and select_topic.html
 					  (extend base html)
 
