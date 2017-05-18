@@ -1,4 +1,4 @@
-**Abstract of the research:**
+##**Abstract of the research:**
 
 Expertise modeling is about profiling an expert based on contents from research articles. 
 In our lab, previous research was conducted to address the problem of assigning research 
@@ -14,7 +14,7 @@ graphical report and navigate into detail for each individual article. User can 
 feedback to the system automatically assigned topics for each individual article. 
 
 
-### folder information ###
+##**Folder information**
 
 * djangomongo
 	- static/bootstrap/js: uploadimage.js, resettopics.js, linkMultiplechoicefield.js, and linkdropdownlost.js
