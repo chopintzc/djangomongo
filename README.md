@@ -33,7 +33,7 @@ feedback to the system automatically assigned topics for each individual article
 ## **Features**
 * UI to load a bunch of pdf files and extract contents from pdf files
 * predict research topics for uploaded pdf files using trained hierarchical model
-* Generate D3.js force-directed graph to visualize the topic prediction to users
+* generate D3.js force-directed graph to visualize the topic prediction to users
 * user can make change to the predicted research topics if necessary
 
 
