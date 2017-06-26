@@ -36,6 +36,17 @@ feedback to the system automatically assigned topics for each individual article
 * generate D3.js force-directed graph to visualize the topic prediction to users
 * user can make change to the predicted research topics if necessary
 
+## **Hierarchical Model**
+
+#### **two level hierarchical classifier**
+
+We trained a hierarchical linear SVM classifier based on ~170,000 research articles. The hierarchical classifier is then used
+to predict research topics for coming in new article instance.
+
+![alt text](image/hierarchical_model.png)
+
+#### **D3 Force-directed Graph**
+
 ## **Author Profile**
 
 #### **upload a bunch of pdf files**
