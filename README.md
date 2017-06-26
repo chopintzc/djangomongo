@@ -43,3 +43,11 @@ feedback to the system automatically assigned topics for each individual article
 upload a bunch of pdf files under the name of particular researcher.
 
 ![alt text](image/Upload_pdfs.png)
+
+#### **D3 Force-directed Graph**
+
+Generate the D3 Force-directed Graph. Each node corresponds to a research article. The color of node corresponds to the dominant 
+research topic. Each article can be multiple labeled. Nodes are connected by link if they are corresponding to the same research 
+topic.
+
+![alt text](image/D3_force-directed_graph.png)
