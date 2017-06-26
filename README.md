@@ -36,4 +36,10 @@ feedback to the system automatically assigned topics for each individual article
 * generate D3.js force-directed graph to visualize the topic prediction to users
 * user can make change to the predicted research topics if necessary
 
+## **Author Profile**
 
+#### **upload a bunch of pdf files**
+
+upload a bunch of pdf files under the name of particular researcher.
+
+![alt text](image/Upload pdfs.png)
