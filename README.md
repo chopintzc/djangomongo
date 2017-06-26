@@ -51,3 +51,10 @@ research topic. Each article can be multiple labeled. Nodes are connected by lin
 topic.
 
 ![alt text](image/D3_force-directed_graph.png)
+
+#### **Event response of D3 Force-directed Graph**
+
+The D3 Force-directed graph can zoom and pan in response to mouse event. The node is bound to a research article by assigning title,
+content and research topics. By clicking the node, the content and topics would be displaced in the right side textfields.
+
+![alt text](image/Graph_Node_click_event.png)
