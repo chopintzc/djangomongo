@@ -58,3 +58,21 @@ The D3 Force-directed graph can zoom and pan in response to mouse event. The nod
 content and research topics. By clicking the node, the content and topics would be displaced in the right side textfields.
 
 ![alt text](image/Graph_Node_click_event.png)
+
+## **Modify Data**
+
+#### **create a new article record**
+
+The interface to manually create a new article record.
+
+![alt text](image/create_a_record.png)
+
+#### **update an existing article record**
+
+The interface to manually update an existing article record.
+
+![alt text](image/update_a_record.png)
+
+The effect after manually update an existing article record.
+
+![alt text](image/updated_record.png)
