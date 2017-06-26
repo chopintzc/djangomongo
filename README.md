@@ -76,3 +76,25 @@ The interface to manually update an existing article record.
 The effect after manually update an existing article record.
 
 ![alt text](image/updated_record.png)
+
+## **Search Data**
+
+#### **search article records based on keyword**
+
+The interface allows us to quickly locate articles containing our interested keyword.
+
+![alt text](image/search_a_record_by_keyword.png)
+
+## **Modify Research Topics**
+
+#### **narrow down research topics**
+
+The interface allows us to manually shrink research topics.
+
+![alt text](image/narrow_down_research_topics.png)
+
+#### **add research topics**
+
+The interface allows us to manually add more research topics.
+
+![alt text](image/add_a_research_topic.png)
