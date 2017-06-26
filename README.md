@@ -42,4 +42,4 @@ feedback to the system automatically assigned topics for each individual article
 
 upload a bunch of pdf files under the name of particular researcher.
 
-![alt text](image/"Upload pdfs.png")
+![alt text](image/Upload_pdfs.png)
